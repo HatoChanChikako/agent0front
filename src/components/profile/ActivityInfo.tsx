@@ -9,11 +9,11 @@ interface ActivityInfoProps {
 
 export function ActivityInfo({ activities }: ActivityInfoProps) {
   return (
-    <Card className="bg-white shadow-lg border border-gray-200 rounded-lg">
-      <CardHeader className="pb-4 px-6 pt-6">
+    <Card className="profile-card">
+      <CardHeader className="card-header-padding">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-base font-medium text-gray-700 flex items-center gap-2">
-            <div className="w-5 h-5 text-blue-500">
+          <CardTitle className="card-title-base">
+            <div className="icon-base">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                 <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.818c-.062-8.71-7.118-15.758-15.84-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z" />
               </svg>
@@ -29,7 +29,7 @@ export function ActivityInfo({ activities }: ActivityInfoProps) {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="px-6 pb-6 space-y-4">
+      <CardContent className="card-content-padding space-y-4">
         {activities.map((activity, index) => (
           <div
             key={index}

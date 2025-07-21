@@ -24,3 +24,97 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .profile-card {
+    @apply bg-white shadow-lg border border-gray-200 rounded-lg;
+  }
+  
+  .profile-card--contact {
+    @apply bg-blue-50 shadow-lg border border-gray-200 rounded-lg;
+  }
+  
+  .card-header-padding {
+    @apply pb-4 px-6 pt-6;
+  }
+  
+  .card-title-base {
+    @apply text-base font-medium text-gray-700 flex items-center gap-2;
+  }
+  
+  .icon-base {
+    @apply w-5 h-5 text-blue-500;
+  }
+  
+  .icon-small {
+    @apply w-4 h-4 text-gray-500;
+  }
+  
+  .icon-contact {
+    @apply w-4 h-4 text-blue-500;
+  }
+  
+  .card-content-padding {
+    @apply px-6 pb-6;
+  }
+  
+  .text-secondary {
+    @apply text-sm text-gray-600;
+  }
+  
+  .text-meta {
+    @apply text-xs text-gray-500;
+  }
+  
+  .status-dot {
+    @apply w-2 h-2 bg-blue-500 rounded-full;
+  }
+  
+  .list-item-base {
+    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50;
+  }
+  
+  .list-item--hoverable {
+    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors;
+  }
+  
+  .list-item--interactive {
+    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors cursor-pointer border border-transparent hover:border-blue-200;
+  }
+  
+  .company-title {
+    @apply font-semibold text-gray-800;
+  }
+  
+  .job-title {
+    @apply text-sm font-medium text-blue-600;
+  }
+  
+  .department-name {
+    @apply text-sm text-gray-600;
+  }
+  
+  .person-name {
+    @apply font-medium text-gray-800 text-sm;
+  }
+  
+  .career-section {
+    @apply border-l-4 pl-4 py-2;
+  }
+  
+  .career-section--current {
+    @apply border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg;
+  }
+  
+  .career-section--past {
+    @apply border-l-4 border-gray-400 pl-4 py-2;
+  }
+  
+  .career-info-container {
+    @apply flex flex-col space-y-1;
+  }
+  
+  .profile-header-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white px-12 py-8;
+  }
+}

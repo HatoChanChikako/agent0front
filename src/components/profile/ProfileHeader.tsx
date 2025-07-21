@@ -7,7 +7,7 @@ interface ProfileHeaderProps {
 
 export function ProfileHeader({ name, skillTags }: ProfileHeaderProps) {
   return (
-    <div className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white px-12 py-8">
+    <div className="profile-header-gradient">
       <div className="max-w-full">
         <h1 className="text-2xl font-bold mb-4">{name}</h1>
         <div className="flex flex-wrap gap-2">
