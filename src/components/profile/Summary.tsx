@@ -32,28 +32,33 @@ export function Summary({ records }: SummaryProps) {
       </CardHeader>
       <CardContent className="card-content-padding space-y-4">
         {records.map((record) => (
-          <div key={record.id} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+          <div key={record.id} className="border border-blue-200 rounded-lg p-4 bg-blue-50">
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <div className="status-dot"></div>
                 <span className="text-secondary">面談記録</span>
               </div>
-              <span className="text-meta">{record.date}</span>
+              <div className="flex items-center gap-1 text-blue-600">
+                <span className="material-symbols-outlined text-sm">calendar_today</span>
+                <span className="text-sm font-medium">{record.date}</span>
+              </div>
             </div>
 
             {/* Title and Badge */}
             <div className="mb-3">
-              <Badge className="bg-blue-100 text-blue-700 border-blue-300 text-xs px-2 py-0.5 mb-2">
-                要約
-              </Badge>
+              {record.isLatest && (
+                <Badge className="bg-blue-600 text-white border-0 px-3 py-1 text-sm font-medium rounded-full mb-2">
+                  最新
+                </Badge>
+              )}
               <h3 className="person-name leading-relaxed">{record.title}</h3>
             </div>
 
             {/* Interviewer */}
             <div className="flex items-center gap-2 mb-3">
               <span className="material-icon icon-small">person</span>
-              <span className="text-secondary">{record.interviewer}</span>
+              <span className="text-blue-600 font-medium">{record.interviewer}</span>
             </div>
 
             {/* Content */}
