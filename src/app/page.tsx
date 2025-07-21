@@ -1,6 +1,6 @@
 import { ProfileHeader } from "@/components/profile/ProfileHeader"
 import { CareerInfo } from "@/components/profile/CareerInfo"
-import { InterviewRecords } from "@/components/profile/InterviewRecords"
+import { Summary } from "@/components/profile/Summary"
 import { ActivityInfo } from "@/components/profile/ActivityInfo"
 import { ContactInfo } from "@/components/profile/ContactInfo"
 import { StaffList } from "@/components/profile/StaffList"
@@ -21,7 +21,7 @@ export default function TalentProfilePage() {
             currentInfo={profile.currentInfo}
             pastBusinessCards={profile.pastBusinessCards}
           />
-          <InterviewRecords records={profile.interviewRecords} />
+          <Summary records={profile.interviewRecords} />
         </div>
 
         {/* Middle Column - Activity Information */}
