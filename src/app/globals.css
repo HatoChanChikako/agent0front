@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
 }
 
 @layer components {
@@ -116,5 +116,59 @@ body {
   
   .profile-header-gradient {
     @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white px-12 py-8;
+  }
+  
+  .activity-category--news {
+    background-color: #EAF4FF;
+  }
+  
+  .activity-category--news .activity-badge {
+    background-color: white;
+    color: #155B8E;
+    border-color: #155B8E;
+  }
+  
+  .activity-category--event {
+    background-color: #FFF1E6;
+  }
+  
+  .activity-category--event .activity-badge {
+    background-color: white;
+    color: #C25300;
+    border-color: #C25300;
+  }
+  
+  .activity-category--book {
+    background-color: #F5F5F0;
+  }
+  
+  .activity-category--book .activity-badge {
+    background-color: white;
+    color: #C25300;
+    border-color: #C25300;
+  }
+  
+  .activity-category--paper {
+    background-color: #F3F0FF;
+  }
+  
+  .activity-category--paper .activity-badge {
+    background-color: white;
+    color: #6041A6;
+    border-color: #6041A6;
+  }
+  
+  .activity-category--other {
+    background-color: #ECFDF3;
+  }
+  
+  .activity-category--other .activity-badge {
+    background-color: white;
+    color: #2B7A4B;
+    border-color: #2B7A4B;
+  }
+  
+  .activity-badge {
+    @apply text-xs px-2 py-0.5 rounded-full border;
   }
 }

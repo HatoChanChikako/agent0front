@@ -30,47 +30,41 @@ export function ActivityInfo({ activities }: ActivityInfoProps) {
         </div>
       </CardHeader>
       <CardContent className="card-content-padding space-y-4">
-        {activities.map((activity, index) => (
-          <div
-            key={index}
-            className={`p-4 rounded-lg ${
-              activity.category === "ニュース"
-                ? "bg-blue-50"
-                : activity.category === "書籍"
-                  ? "bg-gray-50"
-                  : activity.category === "論文"
-                    ? "bg-purple-50"
-                    : "bg-orange-50"
-            }`}
-          >
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <Badge
-                    className={`text-xs px-2 py-0.5 rounded-full border ${
-                      activity.category === "ニュース"
-                        ? "bg-white text-blue-600 border-blue-200"
-                        : activity.category === "書籍"
-                          ? "bg-white text-gray-600 border-gray-300"
-                          : activity.category === "論文"
-                            ? "bg-white text-purple-600 border-purple-200"
-                            : "bg-white text-orange-600 border-orange-200"
-                    }`}
-                  >
-                    {activity.category}
-                  </Badge>
-                  <span className="text-xs text-gray-500">{activity.date}</span>
+        {activities.map((activity, index) => {
+          const getCategoryClass = (category: string) => {
+            switch (category) {
+              case "ニュース": return "activity-category--news"
+              case "イベント": return "activity-category--event"
+              case "書籍": return "activity-category--book"
+              case "論文": return "activity-category--paper"
+              default: return "activity-category--other"
+            }
+          }
+
+          return (
+            <div
+              key={index}
+              className={`p-4 rounded-lg ${getCategoryClass(activity.category)}`}
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Badge className="activity-badge">
+                      {activity.category}
+                    </Badge>
+                    <span className="text-meta">{activity.date}</span>
+                  </div>
+                  <p className="text-sm text-gray-800 leading-relaxed">
+                    {activity.title}
+                  </p>
                 </div>
-                <p className="text-sm text-gray-800 leading-relaxed">
-                  {activity.title}
-                </p>
-              </div>
-              <div className="bg-white rounded-full px-3 py-1 ml-3 shadow-sm border border-gray-100">
-                <span className="text-xs text-gray-600">{activity.details}</span>
+                <div className="bg-white rounded-full px-3 py-1 ml-3 shadow-sm border border-gray-100">
+                  <span className="text-xs text-gray-600">{activity.details}</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </CardContent>
     </Card>
   )
