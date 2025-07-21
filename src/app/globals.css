@@ -27,11 +27,17 @@ body {
 
 @layer components {
   .profile-card {
-    @apply bg-white shadow-lg border border-gray-200 rounded-lg;
+    background: var(--brand-white);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--brand-light-gray);
+    @apply rounded-lg;
   }
   
   .profile-card--contact {
-    @apply bg-blue-50 shadow-lg border border-gray-200 rounded-lg;
+    background: var(--brand-lighter-blue);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--brand-light-gray);
+    @apply rounded-lg;
   }
   
   .card-header-padding {
@@ -39,19 +45,23 @@ body {
   }
   
   .card-title-base {
-    @apply text-base font-medium text-gray-700 flex items-center gap-2;
+    color: var(--brand-dark);
+    @apply text-base font-medium flex items-center gap-2;
   }
   
   .icon-base {
-    @apply w-5 h-5 text-blue-500;
+    color: var(--brand-primary);
+    @apply w-5 h-5;
   }
   
   .icon-small {
-    @apply w-4 h-4 text-gray-500;
+    color: var(--brand-medium-gray);
+    @apply w-4 h-4;
   }
   
   .icon-contact {
-    @apply w-4 h-4 text-blue-500;
+    color: var(--brand-primary);
+    @apply w-4 h-4;
   }
   
   .card-content-padding {
@@ -59,43 +69,63 @@ body {
   }
   
   .text-secondary {
-    @apply text-sm text-gray-600;
+    color: var(--brand-medium-gray);
+    @apply text-sm;
   }
   
   .text-meta {
-    @apply text-xs text-gray-500;
+    color: var(--brand-medium-gray);
+    @apply text-xs;
   }
   
   .status-dot {
-    @apply w-2 h-2 bg-blue-500 rounded-full;
+    background: var(--brand-primary);
+    @apply w-2 h-2 rounded-full;
   }
   
   .list-item-base {
-    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50;
+    background: var(--brand-bg);
+    @apply flex items-start gap-3 p-3 rounded-lg;
   }
   
   .list-item--hoverable {
-    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors;
+    background: var(--brand-bg);
+    @apply flex items-start gap-3 p-3 rounded-lg transition-colors;
+  }
+  
+  .list-item--hoverable:hover {
+    background: var(--brand-lighter-blue);
   }
   
   .list-item--interactive {
-    @apply flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors cursor-pointer border border-transparent hover:border-blue-200;
+    background: var(--brand-bg);
+    border: 1px solid transparent;
+    @apply flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer;
+  }
+  
+  .list-item--interactive:hover {
+    background: var(--brand-light-blue);
+    border-color: var(--brand-primary);
   }
   
   .company-title {
-    @apply font-semibold text-gray-800;
+    color: var(--brand-dark);
+    @apply font-semibold;
   }
   
   .job-title {
-    @apply text-sm font-medium text-blue-600;
+    color: var(--brand-primary);
+    @apply text-sm font-medium;
   }
   
   .department-name {
-    @apply text-sm text-gray-600;
+    color: var(--brand-medium-gray);
+    @apply text-sm;
   }
   
   .person-name {
-    @apply font-medium text-gray-800 text-sm;
+    color: var(--brand-dark);
+    @apply font-medium text-sm;
   }
   
   .career-section {
@@ -103,11 +133,14 @@ body {
   }
   
   .career-section--current {
-    @apply border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r-lg;
+    border-left-color: #10B981;
+    background: #ECFDF5;
+    @apply border-l-4 pl-4 py-2 rounded-r-lg;
   }
   
   .career-section--past {
-    @apply border-l-4 border-gray-400 pl-4 py-2;
+    border-left-color: var(--brand-medium-gray);
+    @apply border-l-4 pl-4 py-2;
   }
   
   .career-info-container {
@@ -115,7 +148,20 @@ body {
   }
   
   .profile-header-gradient {
-    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white px-12 py-8;
+    background: #007AFF;
+    @apply text-white px-12 py-8;
+  }
+  
+  /* Brand Color Variables */
+  :root {
+    --brand-primary: #007AFF;
+    --brand-light-blue: #D2E4FF;
+    --brand-lighter-blue: #E6F0FF;
+    --brand-bg: #FAFAFA;
+    --brand-dark: #333333;
+    --brand-medium-gray: #8C8C8C;
+    --brand-light-gray: #D9D9D9;
+    --brand-white: #FFFFFF;
   }
   
   .activity-category--news {
