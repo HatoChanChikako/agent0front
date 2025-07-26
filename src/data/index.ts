@@ -4,7 +4,7 @@ export const sampleTalentProfile: TalentProfile = {
   name: "鈴木一郎",
   skillTags: ["GX投資", "スタートアップエコシステム", "脱炭素技術", "技術経営", "ESG投資", "グリーンテック"],
   currentInfo: {
-    exchange_date: null,
+    exchange_date: "2025年7月26日",
     company_name: "GXベンチャーズ株式会社",
     current_department: "投資部",
     current_title: "投資マネージャー"

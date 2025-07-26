@@ -28,17 +28,34 @@ export interface Activity {
   details: string
 }
 
-export interface ContactStaff {
+// 汎用的な人物の基本型
+export interface BasePerson {
   id: number
   name: string
+}
+
+// 接点職員型
+export interface ContactStaff extends BasePerson {
   department: string
 }
 
-export interface RelatedPerson {
-  id: number
-  name: string
+// 関連する人物型
+export interface RelatedPerson extends BasePerson {
   company: string
 }
+
+// 汎用的な人物項目型（ListCardで使用）
+export interface PersonItem extends BasePerson {
+  subtitle: string
+}
+
+// UI用のカテゴリマッピング
+export const ACTIVITY_CATEGORY_CLASSES = {
+  "ニュース": "activity-category--news",
+  "イベント": "activity-category--event", 
+  "書籍": "activity-category--book",
+  "論文": "activity-category--paper",
+} as const
 
 export interface TalentProfile {
   name: string

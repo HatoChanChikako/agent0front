@@ -48,11 +48,7 @@ export function InterviewRecordCard({ record }: InterviewRecordCardProps) {
     <div className={cardClassName}>
       {/* Header */}
       <div className={STYLES.header.container}>
-        <div className={STYLES.header.left}>
-          <div className={STYLES.dot} />
-          <span className={STYLES.header.recordLabel}>面談記録</span>
-        </div>
-        <div className={STYLES.header.dateContainer}>
+        <div className={STYLES.header.dateContainer} style={{ marginLeft: 'auto' }}>
           <span className={STYLES.header.dateIcon}>calendar_today</span>
           <span className={STYLES.header.dateText}>{record.date}</span>
         </div>

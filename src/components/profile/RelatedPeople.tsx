@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { RelatedPerson } from "@/types"
+import { ListCard } from "@/components/ui/list-card"
+import { PersonListItem } from "@/components/ui/person-list-item"
 
 interface RelatedPeopleProps {
   people: RelatedPerson[]
@@ -7,24 +8,20 @@ interface RelatedPeopleProps {
 
 export function RelatedPeople({ people }: RelatedPeopleProps) {
   return (
-    <Card className="profile-card">
-      <CardHeader className="card-header-padding">
-        <CardTitle className="card-title-base">
-          <span className="material-icon">share</span>
-          関連する人物
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="card-content-padding space-y-3">
-        {people.map((person) => (
-          <div key={person.id} className="list-item--interactive">
-            <div className="status-dot mt-2"></div>
-            <div className="flex-1">
-              <h4 className="person-name">{person.name}</h4>
-              <p className="text-meta mt-1">{person.company}</p>
-            </div>
-          </div>
-        ))}
-      </CardContent>
-    </Card>
+    <ListCard
+      title="関連する人物"
+      icon="share"
+      items={people}
+      emptyMessage="関連する人物はいません"
+      fullHeight={true}
+      renderItem={(person) => (
+        <PersonListItem
+          key={person.id}
+          id={person.id}
+          name={person.name}
+          subtitle={person.company}
+        />
+      )}
+    />
   )
 }

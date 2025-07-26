@@ -9,7 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,40 +29,44 @@ body {
 @layer components {
   .profile-card {
     background: var(--brand-white);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--brand-light-gray);
     @apply rounded-lg;
+    height: 100%;
   }
-  
+
   .profile-card--contact {
     background: var(--brand-lighter-blue);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--brand-light-gray);
     @apply rounded-lg;
+    height: 100%;
   }
-  
+
   .card-header-padding {
     @apply pb-4 px-6 pt-6;
   }
-  
+
   .card-title-base {
     color: var(--brand-dark);
     @apply text-base font-medium flex items-center gap-2;
   }
-  
+
   .icon-base {
     color: var(--brand-primary);
     @apply w-5 h-5;
   }
-  
+
   .icon-small {
     color: var(--brand-medium-gray);
     @apply w-4 h-4;
   }
-  
+
   .icon-contact {
-    font-family: 'Material Symbols Outlined', sans-serif;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
     color: var(--brand-primary);
     font-size: 12px;
     width: 20px;
@@ -81,171 +86,190 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+    font-feature-settings: "liga";
   }
-  
+
   .card-content-padding {
     @apply px-6 pb-6;
   }
-  
+
   .text-secondary {
     color: var(--brand-medium-gray);
     @apply text-sm;
   }
-  
+
   .text-meta {
     color: var(--brand-medium-gray);
     @apply text-xs;
   }
-  
+
   .status-dot {
     background: var(--brand-primary);
     @apply w-2 h-2 rounded-full;
   }
-  
+
   .list-item-base {
     background: var(--brand-bg);
     @apply flex items-start gap-3 p-3 rounded-lg;
   }
-  
+
   .list-item--hoverable {
     background: var(--brand-bg);
     @apply flex items-start gap-3 p-3 rounded-lg transition-colors;
   }
-  
+
   .list-item--hoverable:hover {
     background: var(--brand-lighter-blue);
   }
-  
+
   .list-item--interactive {
     background: var(--brand-bg);
     border: 1px solid transparent;
     @apply flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer;
   }
-  
+
   .list-item--interactive:hover {
     background: var(--brand-light-blue);
     border-color: var(--brand-primary);
   }
-  
+
   .company-title {
     color: var(--brand-dark);
     @apply font-semibold;
   }
-  
+
   .job-title {
     color: var(--brand-primary);
     @apply text-sm font-medium;
   }
-  
+
   .department-name {
     color: var(--brand-medium-gray);
     @apply text-sm;
   }
-  
+
   .person-name {
     color: var(--brand-dark);
     @apply font-medium text-sm;
   }
-  
+
   .career-section {
     @apply border-l-4 pl-4 py-2;
   }
-  
+
   .career-section--current {
-    border-left-color: #10B981;
-    background: #ECFDF5;
+    border-left-color: #007aff;
+    background: #e6f0ff;
     @apply border-l-4 pl-4 py-2 rounded-r-lg;
   }
-  
+
   .career-section--past {
     border-left-color: var(--brand-medium-gray);
     @apply border-l-4 pl-4 py-2;
   }
-  
+
   .career-info-container {
     @apply flex flex-col space-y-1;
   }
-  
+
   .profile-header-gradient {
-    background: #007AFF;
+    background: #007aff;
     @apply text-white px-12 py-8;
   }
-  
+
   /* Brand Color Variables */
   :root {
-    --brand-primary: #007AFF;
-    --brand-light-blue: #D2E4FF;
-    --brand-lighter-blue: #E6F0FF;
-    --brand-bg: #FAFAFA;
+    --brand-primary: #007aff;
+    --brand-light-blue: #d2e4ff;
+    --brand-lighter-blue: #e6f0ff;
+    --brand-bg: #fafafa;
     --brand-dark: #333333;
-    --brand-medium-gray: #8C8C8C;
-    --brand-light-gray: #D9D9D9;
-    --brand-white: #FFFFFF;
+    --brand-medium-gray: #8c8c8c;
+    --brand-light-gray: #d9d9d9;
+    --brand-white: #ffffff;
   }
-  
+
   .activity-category--news {
-    background-color: #EAF4FF;
+    background-color: #eaf4ff;
   }
-  
+
   .activity-category--news .activity-badge {
     background-color: white;
-    color: #155B8E;
-    border-color: #155B8E;
+    color: #155b8e;
+    border-color: #155b8e;
   }
-  
+
   .activity-category--event {
-    background-color: #FFF1E6;
+    background-color: #fff1e6;
   }
-  
+
   .activity-category--event .activity-badge {
     background-color: white;
-    color: #C25300;
-    border-color: #C25300;
+    color: #c25300;
+    border-color: #c25300;
   }
-  
+
   .activity-category--book {
-    background-color: #F5F5F0;
+    background-color: #f5f5f0;
   }
-  
+
   .activity-category--book .activity-badge {
     background-color: white;
-    color: #C25300;
-    border-color: #C25300;
+    color: #c25300;
+    border-color: #c25300;
   }
-  
+
   .activity-category--paper {
-    background-color: #F3F0FF;
+    background-color: #f3f0ff;
   }
-  
+
   .activity-category--paper .activity-badge {
     background-color: white;
-    color: #6041A6;
-    border-color: #6041A6;
+    color: #6041a6;
+    border-color: #6041a6;
   }
-  
+
   .activity-category--other {
-    background-color: #ECFDF3;
+    background-color: #ecfdf3;
   }
-  
+
   .activity-category--other .activity-badge {
     background-color: white;
-    color: #2B7A4B;
-    border-color: #2B7A4B;
+    color: #2b7a4b;
+    border-color: #2b7a4b;
   }
-  
+
   .activity-badge {
     @apply text-xs px-2 py-0.5 rounded-full border;
   }
-  
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined" !important;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+    font-style: normal;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    user-select: none;
+  }
+
   .material-icon {
-    font-family: 'Material Symbols Outlined', sans-serif;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
-    color: var(--brand-primary);
+    font-family: "Material Symbols Outlined" !important;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+    color: #007aff;
     font-size: 16px;
     width: 32px;
     height: 32px;
-    background: var(--brand-lighter-blue);
+    background: #e6f0ff;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
@@ -260,25 +284,6 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-  }
-  
-  .material-symbols-outlined {
-    font-family: 'Material Symbols Outlined' !important;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
-    font-style: normal;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-    -webkit-font-feature-settings: 'liga';
-    -moz-font-feature-settings: 'liga=1';
-    user-select: none;
+    font-feature-settings: "liga";
   }
 }

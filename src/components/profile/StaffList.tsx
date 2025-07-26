@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ContactStaff } from "@/types"
+import { ListCard } from "@/components/ui/list-card"
+import { PersonListItem } from "@/components/ui/person-list-item"
 
 interface StaffListProps {
   staff: ContactStaff[]
@@ -7,24 +8,19 @@ interface StaffListProps {
 
 export function StaffList({ staff }: StaffListProps) {
   return (
-    <Card className="profile-card">
-      <CardHeader className="card-header-padding">
-        <CardTitle className="card-title-base">
-          <span className="material-icon">groups</span>
-          接点職員
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="card-content-padding space-y-3">
-        {staff.map((member) => (
-          <div key={member.id} className="list-item--hoverable">
-            <div className="status-dot mt-2"></div>
-            <div className="flex-1">
-              <h4 className="person-name">{member.name}</h4>
-              <p className="text-meta mt-1">{member.department}</p>
-            </div>
-          </div>
-        ))}
-      </CardContent>
-    </Card>
+    <ListCard
+      title="接点職員"
+      icon="groups"
+      items={staff}
+      emptyMessage="接点職員はいません"
+      renderItem={(member) => (
+        <PersonListItem
+          key={member.id}
+          id={member.id}
+          name={member.name}
+          subtitle={member.department}
+        />
+      )}
+    />
   )
 }
